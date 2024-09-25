@@ -4,7 +4,7 @@
 *** Buscar credenciales en archivos de configuración ***
 ********************************************************
 
-*Windows - Powershell*
+**Windows - Powershell**
 
 Busca archivos .config dentro de la unidad E:\ y luego busca la palabra "password" en su contenido.
   
@@ -40,7 +40,7 @@ Que hace cada sentencia del comando:
 
 
 
-*Linux - Bash*
+***Linux***
 
 Este comando es para sistemas basados en Unix (como Linux o macOS) y realiza lo siguiente:
 
