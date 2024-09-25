@@ -4,7 +4,8 @@
 *** Buscar credenciales en archivos de configuración ***
 ********************************************************
 
-*Windows - Powershell
+*Windows - Powershell*
+
 Busca archivos .config dentro de la unidad E:\ y luego busca la palabra "password" en su contenido.
  Get-ChildItem -Path "E:\" -Filter "*.config" -recurse | Select-String "password" | Select Filename, LineNumber, Line, Path | Format-List * | Out-File infoPassW.txt -append -width 5200
 
@@ -32,7 +33,7 @@ Que hace cada sentencia del comando:
 
 
 
-*Linux - Bash
+*Linux - Bash*
 Este comando es para sistemas basados en Unix (como Linux o macOS) y realiza lo siguiente:
  find / -name '*.conf' -exec grep -Hn "password" {} \; >> infoPassL.txt
 
