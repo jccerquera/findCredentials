@@ -7,9 +7,8 @@
 *Windows - Powershell*
 
 Busca archivos .config dentro de la unidad E:\ y luego busca la palabra "password" en su contenido.
-
-  Get-ChildItem -Path "E:\" -Filter "*.config" -recurse | Select-String "password" | Select Filename, LineNumber, Line, Path | Format-List * | Out-File infoPassW.txt -append -width 5200
-      Get-ChildItem -Path "E:\" -Filter "*.config" -Recurse
+  
+    Get-ChildItem -Path "E:\" -Filter "*.config" -recurse | Select-String "password" | Select Filename, LineNumber, Line, Path | Format-List * | Out-File infoPassW.txt -append -width 5200
 
 Que hace cada sentencia del comando:
 
@@ -22,11 +21,11 @@ Que hace cada sentencia del comando:
     | Select-String "password"
 
   Selecciona y muestra la siguiente información de los resultados de la búsqueda:
+  Filename: el nombre del archivo.
+  LineNumber: el número de la línea donde se encontró la palabra "password".
+  Line: la línea de texto completa donde se encontró la palabra.
+  Path: la ruta completa del archivo.
   
-    Filename: el nombre del archivo.
-    LineNumber: el número de la línea donde se encontró la palabra "password".
-    Line: la línea de texto completa donde se encontró la palabra.
-    Path: la ruta completa del archivo.
       | Select Filename, LineNumber, Line, Path
 
   Da formato a la salida como una lista, donde cada propiedad se muestra en una nueva línea, en lugar de una tabla.
