@@ -26,7 +26,7 @@ Que hace cada sentencia del comando:
   Line: la línea de texto completa donde se encontró la palabra.
   Path: la ruta completa del archivo.
   
-      | Select Filename, LineNumber, Line, Path
+    | Select Filename, LineNumber, Line, Path
 
   Da formato a la salida como una lista, donde cada propiedad se muestra en una nueva línea, en lugar de una tabla.
   
@@ -43,16 +43,18 @@ Que hace cada sentencia del comando:
 *Linux - Bash*
 
 Este comando es para sistemas basados en Unix (como Linux o macOS) y realiza lo siguiente:
- find / -name '*.conf' -exec grep -Hn "password" {} \; >> infoPassL.txt
+
+    find / -name '*.conf' -exec grep -Hn "password" {} \; >> infoPassL.txt
 
 Que hace cada sentencia del comando:
   Busca de forma recursiva en todo el sistema (a partir de la raíz /) archivos con la extensión .conf.
+  
     find / -name '*.conf'
 
   Por cada archivo encontrado, ejecuta el comando grep para buscar el texto "password" dentro del archivo. El modificador -Hn hace que grep muestre el nombre del archivo (-H) y el número de línea (-n) donde aparece la palabra "password".
+  
     -exec grep -Hn "password" {} \;
 
   Los resultados se agregan (sin sobrescribir) al archivo infoPassL.txt.
+  
     >> infoPassL.txt
-
-En resumen, el comando busca en todos los archivos .conf del sistema las líneas que contienen la palabra "password" y guarda la información (archivo, número de línea, y contenido de la línea) en el archivo infoPassL.txt.
