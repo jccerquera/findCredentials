@@ -4,7 +4,7 @@
 *** Buscar credenciales en archivos de configuración ***
 ********************************************************
 
-**Windows - Powershell**
+***Windows***
 
 Busca archivos .config dentro de la unidad E:\ y luego busca la palabra "password" en su contenido.
   
