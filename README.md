@@ -34,6 +34,7 @@ Que hace cada sentencia del comando:
 
 
 *Linux - Bash*
+
 Este comando es para sistemas basados en Unix (como Linux o macOS) y realiza lo siguiente:
  find / -name '*.conf' -exec grep -Hn "password" {} \; >> infoPassL.txt
 
