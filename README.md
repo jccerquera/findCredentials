@@ -8,7 +8,8 @@
 
 Busca archivos .config dentro de la unidad E:\ y luego busca la palabra "password" en su contenido.
 
- Get-ChildItem -Path "E:\" -Filter "*.config" -recurse | Select-String "password" | Select Filename, LineNumber, Line, Path | Format-List * | Out-File infoPassW.txt -append -width 5200
+  Get-ChildItem -Path "E:\" -Filter "*.config" -recurse | Select-String "password" | Select Filename, LineNumber, Line, Path | Format-List * | Out-File infoPassW.txt -append -width 5200
+      Get-ChildItem -Path "E:\" -Filter "*.config" -Recurse
 
 Que hace cada sentencia del comando:
 
