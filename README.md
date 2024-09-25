@@ -35,6 +35,7 @@ Que hace cada sentencia del comando:
   Guarda la salida en un archivo de texto llamado infoPassW.txt.
   Usa -Append para añadir el contenido al archivo, en lugar de sobrescribirlo.
   Usa -Width 5200 para especificar un ancho de salida de 5200 caracteres por línea (evitando el truncado de líneas).
+  
     | Out-File infoPassW.txt -Append -Width 5200
 
 
