@@ -1,8 +1,10 @@
+## *Disclaimer*
+
+*Este contenido es de caracter personal, de autoaprendizaje constante y recurrente. Por consiguiente, quiero compartir con fines informativos y de ayuda  para los demás profesionales del sector. Cabe aclarar que los ejemplos y escenarios presentados son hipotéticos, las plataformas utilizadas son públicas y pueden reflejar situaciones similares a las de algunas compñaías, estás plataformas cuentan con diferentes escenarios y laboratorios. Así mismo, Las tecnologías al igual que las herramientas utilizadas están sujetas a cambios constantes.*
+
 # findCredentials (Windows - PowerShell | Linux - Bash)
 
-********************************************************
-*** Buscar credenciales en archivos de configuración ***
-********************************************************
+Script en Windows o Linux que busca credenciales en todos los archivos de configuración del mismo sistema operativo.
 
 ***Windows***
 
