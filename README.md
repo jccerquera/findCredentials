@@ -4,31 +4,31 @@
 
 # findCredentials (Windows - PowerShell | Linux - Bash)
 
-Script en Windows o Linux que busca credenciales en todos los archivos de configuración del mismo sistema operativo.
+Script en Windows o Linux que busca credenciales al interior de los archivos de configuración del mismo sistema operativo.
 
 ***Windows***
 
-Busca archivos .config dentro de la unidad E:\ y luego busca la palabra "password" en su contenido.
+Busca archivos .config dentro de la unidad E:\ y luego busca la palabra "password" en su contenido. Por último organiza la información y la exporta a un archivo de nombre infoPassW
   
     Get-ChildItem -Path "E:\" -Filter "*.config" -recurse | Select-String "password" | Select Filename, LineNumber, Line, Path | Format-List * | Out-File infoPassW.txt -append -width 5200
 
 Que hace cada sentencia del comando:
 
-  Buscar recursivamente (incluyendo subdirectorios) en la unidad E:\ todos los archivos con la extensión .config.
+  Buscar recursivamente (incluyendo subdirectorios) dentro de la unidad E:\ todos los archivos con la extensión .config
   
     Get-ChildItem -Path "E:\" -Filter "*.config" -Recurse
 
-  Filtra el contenido de los archivos .config, buscando líneas que contengan la palabra "password".
+  Filtra el contenido de los archivos .config, buscando líneas que contengan la palabra "password"
   
     | Select-String "password"
 
   Selecciona y muestra la siguiente información de los resultados de la búsqueda:
-  Filename: el nombre del archivo.
-  LineNumber: el número de la línea donde se encontró la palabra "password".
-  Line: la línea de texto completa donde se encontró la palabra.
-  Path: la ruta completa del archivo.
+  - Filename: nombre del archivo.
+  - LineNumber: número de la línea donde se encontró la palabra "password".
+  - Line: línea de texto completa donde se encontró la palabra.
+  - Path: ruta completa del archivo.
   
-    | Select Filename, LineNumber, Line, Path
+        | Select Filename, LineNumber, Line, Path
 
   Da formato a la salida como una lista, donde cada propiedad se muestra en una nueva línea, en lugar de una tabla.
   
@@ -49,11 +49,11 @@ Este comando es para sistemas basados en Unix (como Linux o macOS) y realiza lo 
     find / -name '*.conf' -exec grep -Hn "password" {} \; >> infoPassL.txt
 
 Que hace cada sentencia del comando:
-  Busca de forma recursiva en todo el sistema (a partir de la raíz /) archivos con la extensión .conf.
+  Busca de forma recursiva en todo el sistema (a partir de la raíz /) archivos con la extensión .conf
   
     find / -name '*.conf'
 
-  Por cada archivo encontrado, ejecuta el comando grep para buscar el texto "password" dentro del archivo. El modificador -Hn hace que grep muestre el nombre del archivo (-H) y el número de línea (-n) donde aparece la palabra "password".
+  Por cada archivo encontrado, ejecuta el comando grep para buscar el texto "password" dentro del archivo. El parámetro -Hn hace que grep muestre el nombre del archivo (-H) y el número de línea (-n) donde aparece la palabra "password".
   
     -exec grep -Hn "password" {} \;
 
